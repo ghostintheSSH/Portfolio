@@ -1,0 +1,724 @@
+#Due to the size of the script, it is advised to press ctrl+f and enter the state of the
+#site being configured and/or the specific device
+#Example: Pressing ctrl+f and entering GEORGIA will bring the script to the GEORGIA site
+#configuration scripts for the Atlanta, GA switches
+
+
+
+#FLORIDA
+#---------------------------------------------------------------------------------------
+#FL-S1	(Tampa, Florida Switch)
+#Access any PC at FL site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname FL-S1
+int vl1
+ip address 192.168.10.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+ip routing 
+int vlan 10
+ip address 10.1.1.1 255.255.255.252
+int vlan 20
+ip address 20.1.1.1 255.255.255.252
+exit
+exit
+clear arp
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#FL-S2	(Tampa, Florida Switch)
+#Access any PC at FL site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname FL-S2
+int vl1
+ip address 192.168.11.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#FL-S3	(Tampa, Florida Switch)
+#Access any PC at FL site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname FL-S3
+int vl1
+ip address 192.168.12.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#ARIZONA
+#---------------------------------------------------------------------------------------
+#AZ-S1	(Phoenix, Arizona Switch)
+#Access any PC at AZ site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname AZ-S1
+int vl1
+ip address 192.168.10.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+ip routing 
+int vlan 10
+ip address 10.1.1.1 255.255.255.252
+int vlan 20
+ip address 20.1.1.1 255.255.255.252
+exit
+exit
+clear arp
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#AZ-S2	(Phoenix, Arizona Switch)
+#Access any PC at AZ site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname AZ-S2
+int vl1
+ip address 192.168.11.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#AZ-S3	(Phoenix, Arizona Switch)
+#Access any PC at AZ site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname AZ-S3
+int vl1
+ip address 192.168.12.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#OREGON
+#---------------------------------------------------------------------------------------
+#OR-S1	(Portland, Oregon Switch)
+#Access any PC at OR site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname OR-S1
+int vl1
+ip address 192.168.10.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+ip routing 
+int vlan 10
+ip address 10.1.1.1 255.255.255.252
+int vlan 20
+ip address 20.1.1.1 255.255.255.252
+exit
+exit
+clear arp
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#OR-S2	(Portland, Oregon Switch)
+#Access any PC at OR site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname OR-S2
+int vl1
+ip address 192.168.11.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#OR-S3	(Portland, Oregon Switch)
+#Access any PC at OR site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname OR-S3
+int vl1
+ip address 192.168.12.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#MARYLAND
+#---------------------------------------------------------------------------------------
+#DC-S1	(Washington DC, Maryland Switch)
+#Access any PC at DC site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname DC-S1
+int vl1
+ip address 192.168.10.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+ip routing 
+int vlan 10
+ip address 10.1.1.1 255.255.255.252
+int vlan 20
+ip address 20.1.1.1 255.255.255.252
+exit
+exit
+clear arp
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#DC-S2	(Washington DC, Maryland Switch)
+#Access any PC at DC site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname DC-S2
+int vl1
+ip address 192.168.11.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#DC-S3	(Washington DC, Maryland Switch)
+#Access any PC at DC site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname DC-S3
+int vl1
+ip address 192.168.12.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#GEORGIA
+#---------------------------------------------------------------------------------------
+#GA-S1	(Atlanta, Georgia Switch)
+#Access any PC at GA site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname GA-S1
+int vl1
+ip address 192.168.10.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+ip routing 
+int vlan 10
+ip address 10.1.1.1 255.255.255.252
+int vlan 20
+ip address 20.1.1.1 255.255.255.252
+exit
+exit
+clear arp
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#GA-S2	(Atlanta, Georgia Switch)
+#Access any PC at GA site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname GA-S2
+int vl1
+ip address 192.168.11.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#GA-S3	(Atlanta, Georgia Switch)
+#Access any PC at GA site
+#Connect console cable to terminal
+#Connect other end to site switch
+#On PC, open terminal (it will connect you straight to switch due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+en
+config t
+hostname GA-S3
+int vl1
+ip address 192.168.12.1 255.255.255.0
+no shut
+exit
+vlan 10
+vlan 20
+int fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/6
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+int fa0/7
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport access vlan 10
+switchport access vlan 20
+exit
+exit
+copy run start
+
+
+#ENDS ABOVE COMMENT

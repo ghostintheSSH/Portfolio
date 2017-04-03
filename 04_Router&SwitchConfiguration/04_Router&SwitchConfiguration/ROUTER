@@ -1,0 +1,454 @@
+#Due to the size of the script, it is advised to press ctrl+f and enter the state of the
+#site being configured and/or the specific device
+#Example: Pressing ctrl+f and entering GEORGIA will bring the script to the GEORGIA site
+#configuration scripts for the Atlanta, GA switches
+
+
+
+#FLORIDA
+#---------------------------------------------------------------------------------------
+#FL-R	(Tampa, Florida Router)
+#Access any PC at FL site
+#Connect console cable to terminal
+#Connect other end to site router
+#On PC, open terminal (it will connect you straight to router due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+no
+
+en
+config t
+hostname FL-R
+enable secret Redvine1
+ipv6 unicast-routing
+int f0/0
+ip address 172.16.1.1 255.255.255.252
+ipv6 address 2001:db8:3c4d:9::/64
+no shut
+int f0/0.10
+encap dot1q 10
+ip address 10.1.1.1 255.255.255.252
+no shut
+int f0/0.20
+encap dot1q 20
+ip address 20.1.1.1 255.255.255.252
+no shut
+int s0/0/0
+no shut
+encap frame-relay
+int s0/0/0.102 point-to-point
+ip address 10.10.12.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:12::/64
+frame-relay interface-dlci 102
+int s0/0/0.103 point-to-point
+ip address 10.10.13.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:13::/64
+frame-relay interface-dlci 103
+int s0/0/0.104 point-to-point
+ip address 10.10.14.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:14::/64
+frame-relay interface-dlci 104
+int s0/0/0.105 point-to-point
+ip address 10.10.15.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:15::/64
+frame-relay interface-dlci 105
+exit
+router eigrp 100
+network 172.16.0.0
+network 10.0.0.0
+no auto-summary
+exit
+ipv6 router eigrp 100
+no shut
+int f0/0
+ipv6 eigrp 100
+int s0/0/0
+ipv6 eigrp 100
+exit
+exit
+auto secure
+yes
+s0/0/0.102
+s0/0/0.103
+s0/0/0.104
+s0/0/0.105
+kSECURITY IS UPk
+Redvine1
+Redvine1
+1bluetrunk
+1bluetrunk
+FLAdmin
+1bluetrunk
+1bluetrunk
+2
+2
+5
+no
+yes
+
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#Arizona
+#---------------------------------------------------------------------------------------
+#AZ-R	(Phoenix, Arizona Router)
+#Access any PC at AZ site
+#Connect console cable to terminal
+#Connect other end to site router
+#On PC, open terminal (it will connect you straight to router due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+no
+
+en
+config t
+hostname AZ-R
+enable secret Redvine2
+ipv6 unicast-routing
+int f0/0
+ip address 172.16.2.1 255.255.255.252
+ipv6 address 2001:db8:3c4d:9::/64
+no shut
+int f0/0.10
+encap dot1q 10
+ip address 10.1.1.1 255.255.255.252
+no shut
+int f0/0.20
+encap dot1q 20
+ip address 20.1.1.1 255.255.255.252
+int s0/0/0
+no shut
+encap frame-relay
+int s0/0/0.201 point-to-point
+ip address 10.20.21.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:21::/64
+frame-relay interface-dlci 201
+int s0/0/0.203 point-to-point
+ip address 10.20.23.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:23::/64
+frame-relay interface-dlci 203
+int s0/0/0.204 point-to-point
+ip address 10.20.24.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:24::/64
+frame-relay interface-dlci 204
+int s0/0/0.205 point-to-point
+ip address 10.20.25.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:25::/64
+frame-relay interface-dlci 205
+exit
+router eigrp 100
+network 172.16.0.0
+network 10.0.0.0
+no auto-summary
+ipv6 router eigrp 100
+no shut
+int f0/0
+ipv6 eigrp 100
+int s0/0/0
+ipv6 eigrp 100
+exit
+exit
+auto secure
+yes
+s0/0/0.201
+s0/0/0.203
+s0/0/0.204
+s0/0/0.205
+kSECURITY IS UPk
+Redvine2
+Redvine2
+2bluetrunk
+2bluetrunk
+AZAdmin
+2bluetrunk
+2bluetrunk
+2
+2
+5
+no
+yes
+
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#OREGON
+#---------------------------------------------------------------------------------------
+#OR-R	(Portland, Oregon Router)
+#Access any PC at OR site
+#Connect console cable to terminal
+#Connect other end to site router
+#On PC, open terminal (it will connect you straight to router due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+no
+
+en
+config t
+hostname OR-R
+enable secret Redvine3
+ipv6 unicast-routing
+int f0/0
+ip address 172.16.4.1 255.255.255.252
+ipv6 address 2001:db8:3c4d:9::/64
+no shut
+int f0/0.10
+encap dot1q 10
+ip address 10.1.1.1 255.255.255.252
+no shut
+int f0/0.20
+encap dot1q 20
+ip address 20.1.1.1 255.255.255.252
+int s0/0/0
+no shut
+encap frame-relay
+int s0/0/0.301 point-to-point
+ip address 10.30.31.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:31::/64
+frame-relay interface-dlci 301
+int s0/0/0.302 point-to-point
+ip address 10.30.32.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:32::/64
+frame-relay interface-dlci 302
+int s0/0/0.304 point-to-point
+ip address 10.30.34.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:34::/64
+frame-relay interface-dlci 304
+int s0/0/0.305 point-to-point
+ip address 10.30.35.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:35::/64
+frame-relay interface-dlci 305
+exit
+router eigrp 100
+network 172.16.0.0
+network 10.0.0.0
+no auto-summary
+ipv6 router eigrp 100
+no shut
+int f0/0
+ipv6 eigrp 100
+int s0/0/0
+ipv6 eigrp 100
+exit
+exit
+auto secure
+yes
+s0/0/0.301
+s0/0/0.302
+s0/0/0.304
+s0/0/0.305
+kSECURITY IS UPk
+Redvine3
+Redvine3
+3bluetrunk
+3bluetrunk
+ORAdmin
+3bluetrunk
+3bluetrunk
+2
+2
+5
+no
+yes
+
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#MARYLAND
+#---------------------------------------------------------------------------------------
+#DC-R	(Washington DC, Maryland Router)
+#Access any PC at DC site
+#Connect console cable to terminal
+#Connect other end to site router
+#On PC, open terminal (it will connect you straight to router due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+no
+
+en
+config t
+hostname DC-R
+enable secret Redvine4
+ipv6 unicast-routing
+int f0/0
+ip address 172.16.6.1 255.255.255.252
+ipv6 address 2001:db8:3c4d:9::/64
+no shut
+int f0/0.10
+encap dot1q 10
+ip address 10.1.1.1 255.255.255.252
+no shut
+int f0/0.20
+encap dot1q 20
+ip address 20.1.1.1 255.255.255.252
+int s0/0/0
+no shut
+encap frame-relay
+int s0/0/0.401 point-to-point
+ip address 10.40.41.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:41::/64
+frame-relay interface-dlci 401
+int s0/0/0.402 point-to-point
+ip address 10.40.42.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:42::/64
+frame-relay interface-dlci 402
+int s0/0/0.403 point-to-point
+ip address 10.40.43.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:43::/64
+frame-relay interface-dlci 403
+int s0/0/0.405 point-to-point
+ip address 10.40.45.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:45::/64
+frame-relay interface-dlci 405
+int s0/0/1
+ip address 1.1.1.1 255.255.255.252
+no shut
+int tunnel 0
+tunnel mode gre ip
+int t0
+ip address 192.168.1.1 255.255.255.0
+tunnel source s0/0/1
+tunnel destination 1.1.1.2
+exit
+router eigrp 100
+network 172.16.0.0
+network 10.0.0.0
+no auto-summary
+ipv6 router eigrp 100
+no shut
+int f0/0
+ipv6 eigrp 100
+int s0/0/0
+ipv6 eigrp 100
+exit
+exit
+auto secure 
+yes
+s0/0/0.401
+s0/0/0.402
+s0/0/0.403
+s0/0/0.405
+kSECURITY IS UPk
+Redvine4
+Redvine4
+4bluetrunk
+4bluetrunk
+DCAdmin
+4bluetrunk
+4bluetrunk
+2
+2
+5
+no
+yes
+
+copy run start
+
+
+#ENDS ABOVE COMMENT
+
+
+
+#GEORGIA
+#---------------------------------------------------------------------------------------
+#GA-R	(Atlanta, Georgia Router)
+#Access any PC at GA site
+#Connect console cable to terminal
+#Connect other end to site router
+#On PC, open terminal (it will connect you straight to router due to console connection)
+#Copy and paste content into terminal between #START point and #END point
+#STARTS UNDER COMMENT
+no
+
+en
+config t
+hostname GA-R
+enable secret Redvine5
+ipv6 unicast-routing
+int f0/0
+ip address 172.16.8.1 255.255.255.252
+ipv6 address 2001:db8:3c4d:9::/64
+no shut
+int f0/0.10
+encap dot1q 10
+ip address 10.1.1.1 255.255.255.252
+no shut
+int f0/0.20
+encap dot1q 20
+ip address 20.1.1.1 255.255.255.252
+int s0/0/0
+no shut
+encap frame-relay
+int s0/0/0.501 point-to-point
+ip address 10.50.51.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:51::/64
+frame-relay interface-dlci 501
+int s0/0/0.502 point-to-point
+ip address 10.50.52.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:52::/64
+frame-relay interface-dlci 502
+int s0/0/0.503 point-to-point
+ip address 10.50.53.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:53::/64
+frame-relay interface-dlci 503
+int s0/0/0.504 point-to-point
+ip address 10.50.54.50 255.255.255.0
+ipv6 address 2001:db8:3c4d:54::/64
+frame-relay interface-dlci 504
+int s0/0/1
+ip address 1.1.1.2 255.255.255.252
+no shut
+int tunnel 0
+tunnel mode gre ip
+int t0
+ip address 192.168.1.2 255.255.255.0
+tunnel source s0/0/1
+tunnel destination 1.1.1.1
+exit
+router eigrp 100
+network 172.16.0.0
+network 10.0.0.0
+no auto-summary
+ipv6 router eigrp 100
+no shut
+int f0/0
+ipv6 eigrp 100
+int s0/0/0
+ipv6 eigrp 100
+exit
+exit
+auto secure
+yes
+s0/0/0.501
+s0/0/0.502
+s0/0/0.503
+s0/0/0.504
+kSECURITY IS UPk
+Redvine5
+Redvine5
+5bluetrunk
+5bluetrunk
+GAAdmin
+5bluetrunk
+5bluetrunk
+2
+2
+5
+no
+yes
+
+copy run start
+
+
+#ENDS ABOVE COMMENT
